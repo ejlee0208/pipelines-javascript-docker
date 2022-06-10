@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ejleepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ejleepipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: ejleepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: ejleepipelinesjavascriptdocker 
+          image: user03acr.azurecr.io/ejleepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
